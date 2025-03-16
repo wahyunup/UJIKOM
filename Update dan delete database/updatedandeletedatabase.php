@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Mahasiswa</title>
 </head>
+
 <body>
     <?php
     // Konfigurasi database
@@ -30,12 +32,12 @@
         <h1>List Mahasiswa</h1>
         <table border="1">
             <tr>
-              <th>No</th>
-              <th>NIM</th>
-              <th>Nama</th>
-              <th>Gender</th>
-              <th>Jurusan</th>
-              <th>Action</th>
+                <th>No</th>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Gender</th>
+                <th>Jurusan</th>
+                <th>Action</th>
             </tr>
 
             <?php
@@ -49,8 +51,8 @@
                             <td>" . $row["gender"] . "</td>
                             <td>" . $row["jurusan"] . "</td>
                             <td>
-                                <button>Edit</button>
-                                <button>Delete</button>
+                                <a href='edit.php?no=" . $row["no"] . "'>Edit</a> | 
+                                <a href='delete.php?no=" . $row["no"] . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus?\")'>Delete</a>
                             </td>
                           </tr>";
                 }
@@ -64,4 +66,5 @@
         </table>
     </div>
 </body>
+
 </html>
